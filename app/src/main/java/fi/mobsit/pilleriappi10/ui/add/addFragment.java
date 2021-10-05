@@ -16,25 +16,11 @@ import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;
 
 public class addFragment extends Fragment {
 
-    private addViewModel addViewModel;
     private FragmentAddBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        addViewModel =
-                new ViewModelProvider(this).get(addViewModel.class);
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentAddBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.addFragmentHeader;
-        addViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        return binding.getRoot();
     }
 
     @Override
