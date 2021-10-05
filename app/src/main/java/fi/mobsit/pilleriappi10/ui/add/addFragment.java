@@ -27,7 +27,7 @@ public class addFragment extends Fragment {
         binding = FragmentAddBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
+        final TextView textView = binding.addFragmentHeader;
         addViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

@@ -8,7 +8,7 @@
     tools:context=".ui.add.addFragment">
 
     <TextView
-        android:id="@+id/text_dashboard"
+        android:id="@+id/addFragmentHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -26,17 +26,18 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/medicineNameTextbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:freezesText="false"
         android:hint="@string/add_medicine_name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
@@ -44,20 +45,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
+        app:layout_constraintTop_toBottomOf="@+id/addFragmentHeader"
+        android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/medicineTakingDateTextbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:background="?attr/editTextBackground"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="@string/add_date"
         android:inputType="date"
+        android:minHeight="48dp"
         android:singleLine="false"
         android:textColor="@color/white"
         android:textColorHighlight="@color/white"
@@ -66,20 +69,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/medicineNameTextbox"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/medicineTakingTimeTextbox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="?attr/editTextBackground"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="@string/add_hour"
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicineTakingDateTextbox"
+        android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addMedicineButton"
         android:layout_width="0dp"
         android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="100dp"
         android:text="@string/add_button"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
