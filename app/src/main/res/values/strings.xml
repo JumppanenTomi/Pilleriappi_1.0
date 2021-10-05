@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Pilleriappi 1.0</string>
+
+    <!-- Valtterin käännökset -->
     <string name="title_home"> </string>
-    <string name="title_dashboard"> </string>
-    <string name="title_notifications"> </string>
+    <string name="secondary_title_home">Home</string>
+
+    <!-- Tomin käännökset -->
+    <string name="add_title"> </string>
+    <string name="add_secondary_title">Add</string>
+    <string name="add_medicine_name">Medicine name</string>
+    <string name="add_date">Date of taking the medicine</string>
+    <string name="add_hour">Hour of taking the medicine</string>
+    <string name="add_button">Add medicine</string>
+
+    <!-- Andyn käännökset -->
+    <string name="title_settings"> </string>
+    <string name="secondary_title_settings">Settings</string>
 </resources>
