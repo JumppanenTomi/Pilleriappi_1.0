@@ -12,19 +12,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import fi.mobsit.pilleriappi10.databinding.FragmentNotificationsBinding;
+import fi.mobsit.pilleriappi10.databinding.FragmentSettingsBinding;
 
 public class settingsFragment extends Fragment {
 
     private settingsViewModel settingsViewModel;
-    private FragmentNotificationsBinding binding;
+    private FragmentSettingsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         settingsViewModel =
                 new ViewModelProvider(this).get(settingsViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;

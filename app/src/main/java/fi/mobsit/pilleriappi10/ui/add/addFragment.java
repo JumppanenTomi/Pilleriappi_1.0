@@ -12,19 +12,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import fi.mobsit.pilleriappi10.databinding.FragmentDashboardBinding;
+import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;
 
 public class addFragment extends Fragment {
 
     private addViewModel addViewModel;
-    private FragmentDashboardBinding binding;
+    private FragmentAddBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         addViewModel =
                 new ViewModelProvider(this).get(addViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentAddBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textDashboard;
