@@ -3,8 +3,9 @@
     <string name="secondary_title_home">Koti</string>
     <string name="add_secondary_title">Lisää</string>
     <string name="add_medicine_name">Lääkkeen nimi</string>
-    <string name="add_date">Lääkkeen otto päivä</string>
-    <string name="add_hour">Lääkkeen otto aika</string>
+    <string name="add_date">Lääkkeen ottopäivä</string>
+    <string name="add_hour">Lääkkeen ottoaika</string>
     <string name="add_button">Lisää lääke</string>
     <string name="secondary_title_settings">Asetukset</string>
+    <string name="add_sycle">Kuinka usein lääke otetaan</string>
 </resources>

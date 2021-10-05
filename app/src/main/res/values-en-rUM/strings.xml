@@ -7,4 +7,5 @@
     <string name="add_hour">Hour of taking the medicine</string>
     <string name="add_button">Add medicine</string>
     <string name="secondary_title_settings">Settings</string>
+    <string name="add_sycle">How often medicine needs to be taken</string>
 </resources>
