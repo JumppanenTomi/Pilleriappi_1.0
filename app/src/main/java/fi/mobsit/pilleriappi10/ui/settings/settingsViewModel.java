@@ -1,14 +1,14 @@
-package fi.mobsit.pilleriappi10.ui.notifications;
+package fi.mobsit.pilleriappi10.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class settingsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public settingsViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is settings fragment");
     }

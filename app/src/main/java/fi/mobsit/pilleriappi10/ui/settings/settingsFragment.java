@@ -1,4 +1,4 @@
-package fi.mobsit.pilleriappi10.ui.notifications;
+package fi.mobsit.pilleriappi10.ui.settings;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import fi.mobsit.pilleriappi10.R;
 import fi.mobsit.pilleriappi10.databinding.FragmentNotificationsBinding;
 
-public class NotificationsFragment extends Fragment {
+public class settingsFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private settingsViewModel settingsViewModel;
     private FragmentNotificationsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        settingsViewModel =
+                new ViewModelProvider(this).get(settingsViewModel.class);
 
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

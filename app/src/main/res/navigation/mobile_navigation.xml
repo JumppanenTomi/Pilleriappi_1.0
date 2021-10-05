@@ -15,11 +15,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="fi.mobsit.pilleriappi10.ui.add.addFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_add" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="fi.mobsit.pilleriappi10.ui.notifications.NotificationsFragment"
+        android:name="fi.mobsit.pilleriappi10.ui.settings.settingsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>
