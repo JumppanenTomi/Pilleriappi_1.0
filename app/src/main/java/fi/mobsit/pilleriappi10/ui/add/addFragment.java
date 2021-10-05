@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,12 +34,19 @@ public class addFragment extends Fragment {
         Log.v("VIESTI", "ADD-sivu avattu");
         super.onViewCreated(view, savedInstanceState);
         EditText medicineNameTextbox = (EditText) view.findViewById(R.id.medicineNameTextbox);
+        DatePicker medicineTakingDateTextbox = (DatePicker) view.findViewById(R.id.medicineTakingDateTextbox);
+        TimePicker medicineTakingTimepicker = (TimePicker) view.findViewById(R.id.medicineTakingTimepicker);
 
         Button addMedicineButton = (Button) view.findViewById(R.id.addMedicineButton);
 
         addMedicineButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.v("VIESTI", "Lääke lisätty");
+                int hour = medicineTakingTimepicker.getCurrentHour();
+                int min = medicineTakingTimepicker.getCurrentMinute();
+                int day = medicineTakingDateTextbox.getDayOfMonth();
+                int month = medicineTakingDateTextbox.getMonth() + 1;
+                int year = medicineTakingDateTextbox.getYear();
+                Log.v("VIESTI", "Lääke lisätty " + medicineNameTextbox.getText() + ", " + day + "." + month + "." + year + ", " + hour + "." + min);
             }
         });
     }
