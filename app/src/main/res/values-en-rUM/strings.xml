@@ -1,19 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Pilleriappi 1.0</string>
-
-    <!-- Valtterin käännökset -->
-    <string name="title_home" translatable="false"> </string>
     <string name="secondary_title_home">Home</string>
-
-    <!-- Tomin käännökset -->
-    <string name="add_title" translatable="false"> </string>
     <string name="add_secondary_title">Add</string>
     <string name="add_medicine_name">Medicine name</string>
     <string name="add_date">Date of taking the medicine</string>
     <string name="add_hour">Hour of taking the medicine</string>
     <string name="add_button">Add medicine</string>
-
-    <!-- Andyn käännökset -->
-    <string name="title_settings" translatable="false"> </string>
     <string name="secondary_title_settings">Settings</string>
 </resources>
