@@ -1,4 +1,4 @@
-package fi.mobsit.pilleriappi10.ui.dashboard;
+package fi.mobsit.pilleriappi10.ui.add;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import fi.mobsit.pilleriappi10.R;
 import fi.mobsit.pilleriappi10.databinding.FragmentDashboardBinding;
 
-public class DashboardFragment extends Fragment {
+public class addFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private addViewModel addViewModel;
     private FragmentDashboardBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        addViewModel =
+                new ViewModelProvider(this).get(addViewModel.class);
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        addViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
