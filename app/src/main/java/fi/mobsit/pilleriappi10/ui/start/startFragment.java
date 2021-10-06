@@ -1,4 +1,4 @@
-package fi.mobsit.pilleriappi10.ui.settings;
+package fi.mobsit.pilleriappi10.ui.start;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,23 +12,27 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import fi.mobsit.pilleriappi10.databinding.FragmentSettingsBinding;
+import fi.mobsit.pilleriappi10.databinding.FragmentStartBinding;
 
-public class settingsFragment extends Fragment {
+public class startFragment extends Fragment {
 
-    private settingsViewModel settingsViewModel;
-    private FragmentSettingsBinding binding;
+    private startViewModel startViewModel;
+    private FragmentStartBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        settingsViewModel =
-                new ViewModelProvider(this).get(settingsViewModel.class);
 
-        binding = FragmentSettingsBinding.inflate(inflater, container, false);
+        startViewModel =
+                new ViewModelProvider(this).get(startViewModel.class);
+
+        binding = FragmentStartBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSettings;
-        settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.aloitsuteksti;
+        startViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/global_background"
-    tools:context=".ui.settings.settingsFragment">
+    tools:context=".ui.start.startFragment">
 
     <TextView
-        android:id="@+id/textSettings"
+        android:id="@+id/aloitsuteksti"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

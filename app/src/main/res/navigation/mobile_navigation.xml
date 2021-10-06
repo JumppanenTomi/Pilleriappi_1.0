@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_start">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -22,4 +22,10 @@
         android:name="fi.mobsit.pilleriappi10.ui.settings.settingsFragment"
         android:label="@string/secondary_title_settings"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_start"
+        android:name="fi.mobsit.pilleriappi10.ui.start.startFragment"
+        android:label="@string/secondary_title_start"
+        tools:layout="@layout/fragment_start" />
 </navigation>

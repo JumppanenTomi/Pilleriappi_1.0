@@ -8,4 +8,5 @@
     <string name="add_button">Lisää lääke</string>
     <string name="secondary_title_settings">Asetukset</string>
     <string name="add_sycle">Kuinka usein lääke otetaan</string>
+    <string name="secondary_title_start">Aloitus</string>
 </resources>
