@@ -59,7 +59,6 @@ public class addFragment extends Fragment {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             Gson gson = new Gson();
             String json = gson.toJson(medicines);
-            json.parse
             editor.putString(MEDICINE_NAME, json);
             editor.apply();
 
