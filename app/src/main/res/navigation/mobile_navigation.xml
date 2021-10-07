@@ -27,5 +27,5 @@
         android:id="@+id/navigation_start"
         android:name="fi.mobsit.pilleriappi10.ui.start.startFragment"
         android:label="@string/secondary_title_start"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start"/>
 </navigation>

@@ -13,4 +13,12 @@
     <string name="add_frequency_once">Just once</string>
     <string name="add_frequency_once_a_day">Once a day</string>
     <string name="add_frequency_once_a_week">Once a week</string>
+    <string name="add_medicine_addded">Lääke on lisätty</string>
+    <string name="notification_channel_name">Muistuta lääkkeistä</string>
+    <string name="notification_channel_description">Kun asetat uuden lääkkeen PilleriAppiin ja ilmoitus asetuksesi ovat sekä Android -järjestelmässä että Pilleriappissa käytössä. Sovellus hälyttää, kun on aika ottaa lääkkeet</string>
+    <string name="notification_title">Lääke muistutus</string>
+    <string name="notification_text_content">Lääkkesi ottoaika on nyt</string>
+    <string name="settings_firstname">Keneksi kutsun sinua?</string>
+    <string name="app_continue">Jatka</string>
+    <string name="notifications">Lääke muistutukset</string>
 </resources>

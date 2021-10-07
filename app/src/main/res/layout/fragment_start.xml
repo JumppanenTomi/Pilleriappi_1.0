@@ -7,21 +7,76 @@
     android:background="@drawable/global_background"
     tools:context=".ui.start.startFragment">
 
-    <TextView
-        android:id="@+id/aloitsuteksti"
+    <Button
+        android:id="@+id/start_continue"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_height="90dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/app_continue"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernametextbox"
+        app:layout_constraintVertical_bias="0.994" />
+
+    <EditText
+        android:id="@+id/usernametextbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:freezesText="false"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernamelabel"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/usernamelabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:labelFor="@id/medicineNameTextbox"
+        android:text="@string/settings_firstname"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494"
-        android:textColor="@color/white"/>
+        app:layout_constraintVertical_bias="0.46" />
 
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="152dp"
+        android:checked="false"
+        android:text="@string/notifications"
+        android:textColor="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/start_continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernametextbox"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

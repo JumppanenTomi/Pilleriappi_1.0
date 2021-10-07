@@ -13,4 +13,12 @@
     <string name="add_frequency_once">Just once</string>
     <string name="add_frequency_once_a_day">Once a day</string>
     <string name="add_frequency_once_a_week">Once a week</string>
+    <string name="add_medicine_addded">Medicine has been added.</string>
+    <string name="notification_channel_name">Medicine reminder</string>
+    <string name="notification_channel_description">When you set new medicine to Pilleriappi, and your notification settings are on both android system and Pilleriappi turned on. App will alarm you  when it\'s time to take medicine</string>
+    <string name="notification_title">Medicine alarm</string>
+    <string name="notification_text_content">Your medicine taking time is now</string>
+    <string name="settings_firstname">Who should I call you?</string>
+    <string name="app_continue">Continue</string>
+    <string name="notifications">Medicine notifications</string>
 </resources>
