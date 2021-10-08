@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import fi.mobsit.pilleriappi10.R;
 import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;
-import fi.mobsit.pilleriappi10.notifications.nofificationManager;
+import fi.mobsit.pilleriappi10.notifications.notificationManager;
 
 /** @author Tomi Jumppanen */
 
@@ -52,9 +52,9 @@ public class addFragment extends Fragment {
         Button addMedicineButton = view.findViewById(R.id.addMedicineButton);//initializing variable to get data from button
 
         addMedicineButton.setOnClickListener(v -> {
-            nofificationManager notification = new nofificationManager(getActivity());
+            notificationManager notification = new notificationManager(getActivity());
             Boolean notificationPermission = notification.toBool();
-            notification.newNotification("medicineRemind", 1);
+            notification.newNotification("medicineNotification", 1);
 
             EditText medicineNameTextbox = view.findViewById(R.id.medicineNameTextbox);//initializing variable to get data from Textbox
             DatePicker medicineTakingDateTextbox = view.findViewById(R.id.medicineTakingDateTextbox);//initializing variable to get data from Calendar-widget

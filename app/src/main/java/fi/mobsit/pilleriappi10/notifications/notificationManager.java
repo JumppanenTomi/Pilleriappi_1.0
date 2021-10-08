@@ -14,7 +14,7 @@ import fi.mobsit.pilleriappi10.R;
 
 /** @author Tomi Jumppanen */
 
-public class nofificationManager {
+public class notificationManager {
 
     private static final  String SHARED_PREFS = "Settings";//setting variable's value to value that is our preference file name
     private static final String NOTIFICATIONS = "notifications";//setting variable's value to value that is our preference tag's correct valueä
@@ -22,7 +22,7 @@ public class nofificationManager {
     Context context;
     private String CHANNEL_ID;
 
-    public nofificationManager(Context context){
+    public notificationManager(Context context){
         this.context = context;
     }
 
@@ -32,8 +32,8 @@ public class nofificationManager {
         return notifications;
     }
 
-    public void createNotificationChannel() {
-        this.CHANNEL_ID = "remindMedicine";
+    public void createNotificationChannel(String CHANNEL_ID) {
+        this.CHANNEL_ID = CHANNEL_ID;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = context.getString(R.string.notification_channel_name);
             String description = context.getString(R.string.notification_channel_description);
@@ -48,16 +48,17 @@ public class nofificationManager {
     }
 
     public void newNotification(String CHANNEL_ID, Integer NOTIFICATION_ID){
-        this.CHANNEL_ID = CHANNEL_ID;
-        createNotificationChannel();
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this.context, this.CHANNEL_ID)
-                .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle(context.getString(R.string.notification_title))
-                .setContentText(context.getString(R.string.notification_text_content))
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                .setVibrate(new long[]{4000,4000,4000,4000,4000});
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this.context);
-        notificationManager.notify(NOTIFICATION_ID, builder.build());
+        Boolean notificationPermission = toBool();
+        if(notificationPermission){
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this.context, CHANNEL_ID)
+                    .setSmallIcon(R.drawable.notification_icon)
+                    .setContentTitle(context.getString(R.string.notification_title))
+                    .setContentText(context.getString(R.string.notification_text_content))
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                    .setVibrate(new long[]{4000,4000,4000,4000,4000});
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this.context);
+            notificationManager.notify(NOTIFICATION_ID, builder.build());
+        }
     }
 }

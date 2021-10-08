@@ -17,6 +17,7 @@ import androidx.navigation.Navigation;
 
 import fi.mobsit.pilleriappi10.databinding.FragmentStartBinding;
 import fi.mobsit.pilleriappi10.R;
+import fi.mobsit.pilleriappi10.notifications.*;
 
 /** @author Tomi Jumppanen */
 
@@ -35,6 +36,8 @@ public class startFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        notificationManager notificationManager = new notificationManager(getContext());
+        notificationManager.createNotificationChannel("medicineNotification");
         super.onViewCreated(view, savedInstanceState);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);//initializing sharedpreferences to correct xml-file and setting it to private so other instances cant access it
         boolean firstLaunch = sharedPreferences.getBoolean(FIRST_LAUNCH, true);
@@ -48,7 +51,7 @@ public class startFragment extends Fragment {
 
                 SharedPreferences.Editor prefEditor = sharedPreferences.edit();
                 prefEditor.putBoolean(FIRST_LAUNCH, false);
-                prefEditor.putBoolean(NOTIFICATIONS, notificationSwitch.getShowText());
+                prefEditor.putBoolean(NOTIFICATIONS, notificationSwitch.isChecked());
                 prefEditor.putString(FIRST_NAME, usernametextbox.getText().toString());
                 prefEditor.apply();
                 Navigation.findNavController(view).navigate(R.id.navigation_home);
