@@ -11,16 +11,18 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import com.google.gson.Gson;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 import fi.mobsit.pilleriappi10.R;
-import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;//
+import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;
+import fi.mobsit.pilleriappi10.notifications.nofifications;
 
 /** @author Tomi Jumppanen */
 
@@ -50,6 +52,9 @@ public class addFragment extends Fragment {
         Button addMedicineButton = view.findViewById(R.id.addMedicineButton);//initializing variable to get data from button
 
         addMedicineButton.setOnClickListener(v -> {
+            nofifications checker = new nofifications(getActivity());
+            Boolean notificationPermission = checker.toBool();
+
             EditText medicineNameTextbox = view.findViewById(R.id.medicineNameTextbox);//initializing variable to get data from Textbox
             DatePicker medicineTakingDateTextbox = view.findViewById(R.id.medicineTakingDateTextbox);//initializing variable to get data from Calendar-widget
             TimePicker medicineTakingTimepicker = view.findViewById(R.id.medicineTakingTimepicker);//initializing variable to get data from clock-widget
