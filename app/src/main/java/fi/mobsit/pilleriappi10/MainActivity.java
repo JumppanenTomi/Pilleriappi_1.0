@@ -3,10 +3,13 @@ package fi.mobsit.pilleriappi10;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
@@ -17,18 +20,22 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import fi.mobsit.pilleriappi10.databinding.ActivityMainBinding;
+import fi.mobsit.pilleriappi10.notifications.nofificationsChecker;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "remindMedicine";
     private ActivityMainBinding binding;
+    nofificationsChecker checker;
+    //Context context = getActivityResultRegistry();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);//force app use dark mode
         getSupportActionBar().hide();//hide ugly top action bar
         super.onCreate(savedInstanceState);
-
+        createNotificationChannel();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -41,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
+        //Log.v("Return", checker.mayIsendNotification(context).toString());
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle(getString(R.string.notification_title))
