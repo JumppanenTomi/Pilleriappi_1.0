@@ -21,4 +21,5 @@
     <string name="settings_firstname">Keneksi kutsun sinua?</string>
     <string name="app_continue">Jatka</string>
     <string name="notifications">Lääke muistutukset</string>
+    <string name="home_no_medicine_data">Ei lisätty dataa! Lisää ensimmäinen lääkkeesi panamalla \"+\"-merkkiä alavalikosta.</string>
 </resources>

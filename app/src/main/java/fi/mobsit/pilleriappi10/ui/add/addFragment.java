@@ -53,7 +53,6 @@ public class addFragment extends Fragment {
 
         addMedicineButton.setOnClickListener(v -> {
             notificationManager notification = new notificationManager(getActivity());
-            Boolean notificationPermission = notification.toBool();
             notification.newNotification("medicineNotification", 1);
 
             EditText medicineNameTextbox = view.findViewById(R.id.medicineNameTextbox);//initializing variable to get data from Textbox

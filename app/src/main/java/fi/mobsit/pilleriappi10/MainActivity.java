@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();//hide ugly top action bar
         super.onCreate(savedInstanceState);
 
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 

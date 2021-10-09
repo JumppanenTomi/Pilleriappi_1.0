@@ -21,4 +21,5 @@
     <string name="settings_firstname">Who should I call you?</string>
     <string name="app_continue">Continue</string>
     <string name="notifications">Medicine notifications</string>
+    <string name="home_no_medicine_data">No data added! Please click \"+\"-sign from btoom navigation to add your first medicine.</string>
 </resources>

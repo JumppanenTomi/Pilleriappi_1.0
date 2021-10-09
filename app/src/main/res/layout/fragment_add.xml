@@ -162,40 +162,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/medicineTakingDateTextbox" />
 
 
-            <TextView
-                android:id="@+id/medicineTakeTimeLabel2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:labelFor="@id/sycle"
-                android:text="@string/add_sycle"
-                android:textAlignment="textStart"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <RadioGroup
-                android:id="@+id/sycle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp">
-
-                <RadioButton
-                    android:id="@+id/sycle_once"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="RadioButton" />
-            </RadioGroup>
-
             <Button
                 android:id="@+id/addMedicineButton"
                 android:layout_width="match_parent"

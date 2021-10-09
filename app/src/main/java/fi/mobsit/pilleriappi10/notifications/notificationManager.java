@@ -1,11 +1,17 @@
 package fi.mobsit.pilleriappi10.notifications;
 
+import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.os.Build;
+import android.os.SystemClock;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -56,7 +62,9 @@ public class notificationManager {
                     .setContentText(context.getString(R.string.notification_text_content))
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
                     .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                    .setVibrate(new long[]{4000,4000,4000,4000,4000});
+                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                    .setAutoCancel(true)
+                    .setVibrate(new long[]{4000,4000,4000,4000,4000,4000,4000,4000,4000,4000});
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this.context);
             notificationManager.notify(NOTIFICATION_ID, builder.build());
         }
