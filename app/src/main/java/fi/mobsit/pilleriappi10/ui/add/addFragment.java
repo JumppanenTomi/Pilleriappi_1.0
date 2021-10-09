@@ -52,9 +52,6 @@ public class addFragment extends Fragment {
         Button addMedicineButton = view.findViewById(R.id.addMedicineButton);//initializing variable to get data from button
 
         addMedicineButton.setOnClickListener(v -> {
-            notificationManager notification = new notificationManager(getActivity());
-            notification.newNotification("medicineNotification", 1);
-
             EditText medicineNameTextbox = view.findViewById(R.id.medicineNameTextbox);//initializing variable to get data from Textbox
             DatePicker medicineTakingDateTextbox = view.findViewById(R.id.medicineTakingDateTextbox);//initializing variable to get data from Calendar-widget
             TimePicker medicineTakingTimepicker = view.findViewById(R.id.medicineTakingTimepicker);//initializing variable to get data from clock-widget
