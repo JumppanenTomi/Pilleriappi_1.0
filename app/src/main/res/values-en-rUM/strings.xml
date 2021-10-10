@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="selectedlanguage">ENGLISH</string>
+    <string name="language">ENGLISH</string>
     <string name="secondary_title_home">Home</string>
     <string name="add_secondary_title">Add</string>
     <string name="add_medicine_name">Medicine name</string>
