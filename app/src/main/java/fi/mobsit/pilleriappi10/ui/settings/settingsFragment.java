@@ -38,7 +38,7 @@ public class settingsFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
 
-                buttonCredits.setText(s);
+                //buttonCredits.setText(s);
                 buttonCredits.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
