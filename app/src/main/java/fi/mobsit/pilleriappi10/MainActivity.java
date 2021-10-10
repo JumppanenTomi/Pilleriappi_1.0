@@ -28,8 +28,7 @@ import fi.mobsit.pilleriappi10.notifications.*;
 
 public class MainActivity extends AppCompatActivity  {
 
-    private static ActivityMainBinding binding;
-    public ActivityMainBinding binding;
+    private ActivityMainBinding binding;
     public NavController navController;
 
 
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity  {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        public static ActivityMainBinding bindingForFragment = binding;
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

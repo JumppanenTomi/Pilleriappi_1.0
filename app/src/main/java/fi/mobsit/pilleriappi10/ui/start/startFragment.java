@@ -45,14 +45,6 @@ public class startFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        nav =  MainActivity.binding.navView;
-        Log.v("PASKAA", String.valueOf(nav));
-        nav.setVisibility(View.INVISIBLE);
-    }
-
-    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);//initializing sharedpreferences to correct xml-file and setting it to private so other instances cant access it
@@ -78,9 +70,6 @@ public class startFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (nav.getVisibility() ==  View.INVISIBLE){
-            nav.setVisibility(View.VISIBLE);
-        }
         binding = null;
     }
 }
