@@ -26,4 +26,6 @@
     <string name="app_continue">Continue</string>
     <string name="notifications">Medicine notifications</string>
     <string name="home_no_medicine_data">No data added! Please click \"+\"-sign from btoom navigation to add your first medicine.</string>
+    <string name="app_logo_description">app logo</string>
+    <string name="app_name_description" translatable="false">pilleriappi 1.0</string>
 </resources>

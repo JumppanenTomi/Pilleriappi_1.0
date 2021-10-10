@@ -22,4 +22,5 @@
     <string name="app_continue">Jatka</string>
     <string name="notifications">Lääke muistutukset</string>
     <string name="home_no_medicine_data">Ei lisätty dataa! Lisää ensimmäinen lääkkeesi panamalla \"+\"-merkkiä alavalikosta.</string>
+    <string name="app_logo_description">sovelluksen logo</string>
 </resources>

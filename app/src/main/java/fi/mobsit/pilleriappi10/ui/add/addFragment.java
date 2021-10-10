@@ -16,13 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
+import fi.mobsit.pilleriappi10.MainActivity;
 import fi.mobsit.pilleriappi10.R;
 import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;
-import fi.mobsit.pilleriappi10.notifications.notificationManager;
 
 /** @author Tomi Jumppanen */
 
@@ -41,13 +42,13 @@ public class addFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        super.onViewCreated(view, savedInstanceState);//Telling Dalvik VM to execute all classes in current Activity, instead of just execute just this class
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);//initializing sharedpreferences to correct xml-file and setting it to private so other instances cant access it
 
         oldDataJson = sharedPreferences.getString(MEDICINE_ARRAY, "");//getting old data from shared preferences file so it wont be wiped after creating new arraylist
 
-        ArrayList<medicine> medicines = new ArrayList<>();//initializing new arraylist
+        ArrayList<addMedicine> medicines = new ArrayList<>();//initializing new arraylist
 
         Button addMedicineButton = view.findViewById(R.id.addMedicineButton);//initializing variable to get data from button
 
@@ -56,8 +57,8 @@ public class addFragment extends Fragment {
             DatePicker medicineTakingDateTextbox = view.findViewById(R.id.medicineTakingDateTextbox);//initializing variable to get data from Calendar-widget
             TimePicker medicineTakingTimepicker = view.findViewById(R.id.medicineTakingTimepicker);//initializing variable to get data from clock-widget
 
-            medicine newMedicine = new medicine(medicineNameTextbox.getText().toString(), medicineTakingTimepicker.getCurrentMinute(), medicineTakingTimepicker.getCurrentHour(), medicineTakingDateTextbox.getDayOfMonth(), medicineTakingDateTextbox.getMonth() + 1, medicineTakingDateTextbox.getYear());
-            medicines.add(newMedicine);//Creating new object for added medicine
+            addMedicine newMedicine = new addMedicine(medicineNameTextbox.getText().toString(), medicineTakingTimepicker.getCurrentMinute(), medicineTakingTimepicker.getCurrentHour(), medicineTakingDateTextbox.getDayOfMonth(), medicineTakingDateTextbox.getMonth() + 1, medicineTakingDateTextbox.getYear());//Creating new object for added addMedicine
+            medicines.add(newMedicine);//adding just created object to our arraylist
 
             SharedPreferences.Editor editor = sharedPreferences.edit();//starting sharedPreferences editor
             Gson gson = new Gson();//creating new object called gson

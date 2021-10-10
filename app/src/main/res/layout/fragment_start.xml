@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/global_background"
+    android:id="@+id/startFragment"
     tools:context=".ui.start.startFragment">
 
     <Button
@@ -70,6 +71,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="152dp"
         android:checked="false"
+        android:minHeight="48dp"
         android:text="@string/notifications"
         android:textColor="@color/white"
         android:thumbTint="@color/white"
@@ -79,4 +81,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernametextbox"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="171dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/app_logo_description"
+        android:src="@drawable/ic_pilleriappi_flat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="288dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/app_name_description"
+        android:src="@drawable/ic_pilleriappi_text"
+        app:layout_constraintBottom_toTopOf="@+id/usernamelabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogo"
+        app:layout_constraintVertical_bias="0.254" />
 </androidx.constraintlayout.widget.ConstraintLayout>

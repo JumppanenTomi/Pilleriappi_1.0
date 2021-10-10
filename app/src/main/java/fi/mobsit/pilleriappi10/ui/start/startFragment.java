@@ -1,20 +1,29 @@
 package fi.mobsit.pilleriappi10.ui.start;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import fi.mobsit.pilleriappi10.MainActivity;
+import fi.mobsit.pilleriappi10.databinding.ActivityMainBinding;
 import fi.mobsit.pilleriappi10.databinding.FragmentStartBinding;
 import fi.mobsit.pilleriappi10.R;
 import fi.mobsit.pilleriappi10.notifications.*;
@@ -26,6 +35,7 @@ public class startFragment extends Fragment {
     public static final String FIRST_LAUNCH = "firstLaunch";//setting variable's value to value that is our preference tag's correct value
     public static final String NOTIFICATIONS = "notifications";//setting variable's value to value that is our preference tag's correct value
     public static final String FIRST_NAME = "firstname";//setting variable's value to value that is our preference tag's correct value
+    BottomNavigationView nav;
 
     private FragmentStartBinding binding;
 
@@ -35,9 +45,15 @@ public class startFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        nav =  MainActivity.binding.navView;
+        Log.v("PASKAA", String.valueOf(nav));
+        nav.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        notificationManager notificationManager = new notificationManager(getContext());
-        notificationManager.createNotificationChannel("medicineNotification");
         super.onViewCreated(view, savedInstanceState);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);//initializing sharedpreferences to correct xml-file and setting it to private so other instances cant access it
         boolean firstLaunch = sharedPreferences.getBoolean(FIRST_LAUNCH, true);
@@ -62,6 +78,9 @@ public class startFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        if (nav.getVisibility() ==  View.INVISIBLE){
+            nav.setVisibility(View.VISIBLE);
+        }
         binding = null;
     }
 }
