@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="selectedlanguage">SUOMI</string>
+    <string name="language">SUOMI</string>
     <string name="secondary_title_home">Koti</string>
     <string name="add_secondary_title">Lisää</string>
     <string name="add_medicine_name">Lääkkeen nimi</string>

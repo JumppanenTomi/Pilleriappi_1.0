@@ -2,10 +2,12 @@ package fi.mobsit.pilleriappi10;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultRegistry;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "remindMedicine";
     private ActivityMainBinding binding;
     nofificationsManager checker;
-    //Context context = getActivityResultRegistry();
+    ActivityResultRegistry context = getActivityResultRegistry();
 
 
     @Override
