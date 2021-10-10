@@ -27,15 +27,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:text="ILMOITUKSET PÄÄLLE/POIS"
+        android:text="@string/notification_channel_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSuomi"
-        android:layout_width="260dp"
-        android:layout_height="85dp"
-        android:text="SUOMI"
+        android:layout_width="268dp"
+        android:layout_height="138dp"
+        android:text="@string/change_language"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,25 +47,13 @@
         android:id="@+id/buttonCredits"
         android:layout_width="261dp"
         android:layout_height="67dp"
-        android:text="KREDIITIT"
+        android:text="Paska"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textLanguage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ilmoituksetSwitch" />
-
-    <Button
-        android:id="@+id/buttonEnglish"
-        android:layout_width="260dp"
-        android:layout_height="85dp"
-        android:text="ENGLISH"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSuomi" />
+        app:layout_constraintTop_toBottomOf="@+id/ilmoituksetSwitch"
+        app:layout_constraintVertical_bias="0.493" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

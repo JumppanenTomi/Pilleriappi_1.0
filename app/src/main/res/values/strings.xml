@@ -25,7 +25,11 @@
     <string name="settings_firstname">Who should I call you?</string>
     <string name="app_continue">Continue</string>
     <string name="notifications">Medicine notifications</string>
-    <string name="home_no_medicine_data">No data added! Please click \"+\"-sign from btoom navigation to add your first medicine.</string>
-    <string name="app_logo_description">app logo</string>
-    <string name="app_name_description" translatable="false">pilleriappi 1.0</string>
+    <string name="change_language">Change Language</string>
+    <string name="credits_button">Credits</string>
+    <string name="empty_case">      </string>
+    <string name="tomi_jumppanen">Tomi Jumppanen</string>
+    <string name="valtteri_rautauoma">Valtteri Rautauoma</string>
+    <string name="andy_vaan">Andreas Lang</string>
+
 </resources>
