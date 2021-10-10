@@ -2,6 +2,7 @@ package fi.mobsit.pilleriappi10.ui.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,12 @@ public class HomeFragment extends Fragment {
             try {
 
                 JSONArray jsonArray = new JSONArray(json);
-
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject object = jsonArray.getJSONObject(i);
-                    String name = object.getString("name");
+                    String name = object.getString("medicineName");
                     String time = object.getString("time");
-                    String outPut = name+"-"+time;
+                    String date = object.getString("date");
+                    String outPut = name+"-"+time+"-"+date;
                     lista.add(createMed("nimet", outPut));
                 }
             }
@@ -82,6 +83,7 @@ public class HomeFragment extends Fragment {
             mednro.put(name, time);
             return mednro;
         }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -62,10 +62,18 @@ public class addFragment extends Fragment {
 
             SharedPreferences.Editor editor = sharedPreferences.edit();//starting sharedPreferences editor
             Gson gson = new Gson();//creating new object called gson
-            String json = oldDataJson;//initializing old data to json variable
-            json += gson.toJson(medicines);//telling to gson object to convert ArrayList called medicines and adding it to variable called json
-            String trimmedJson = json.replaceAll("&quot", "");//trimming json file. Removing "&quot" from array. REMOVE IF NECESSARILY!!!!
-            editor.putString(MEDICINE_ARRAY, trimmedJson);//adding value of variable "json" to sharedPreferences editor queue
+            String newJson = gson.toJson(medicines);
+            String json;
+            if (oldDataJson != null && oldDataJson.length() > 0){
+                oldDataJson = oldDataJson.substring(0, oldDataJson.length() - 1);
+                newJson = newJson.substring(1);
+                json = oldDataJson + "," + newJson;
+            }else{
+                json = newJson;
+            }
+            //initializing old data to json variable
+            String trimmedJson = json.replaceAll("&quot;", "");//trimming json file. Removing "&quot" from array. REMOVE IF NECESSARILY!!!!
+            editor.putString(MEDICINE_ARRAY, json);//adding value of variable "json" to sharedPreferences editor queue
             editor.apply();//applying changes to sharedPreferences from last editor line
 
             Toast.makeText(getActivity(),R.string.add_medicine_addded, Toast.LENGTH_SHORT).show();//creating nice popup for user to tell that data was sent
