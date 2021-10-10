@@ -32,7 +32,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonSuomi"
+        android:id="@+id/buttonCredits"
+        android:layout_width="268dp"
+        android:layout_height="138dp"
+        android:text="@string/credits_button"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textLanguage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonChangeLanguage"
         android:layout_width="268dp"
         android:layout_height="138dp"
         android:text="@string/change_language"
@@ -42,18 +55,5 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLanguage" />
-
-    <Button
-        android:id="@+id/buttonCredits"
-        android:layout_width="261dp"
-        android:layout_height="67dp"
-        android:text="Paska"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textLanguage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ilmoituksetSwitch"
-        app:layout_constraintVertical_bias="0.493" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
