@@ -2,13 +2,9 @@ package fi.mobsit.pilleriappi10;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -20,13 +16,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import fi.mobsit.pilleriappi10.databinding.ActivityMainBinding;
-import fi.mobsit.pilleriappi10.notifications.nofificationsChecker;
+import fi.mobsit.pilleriappi10.notifications.nofificationsManager;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "remindMedicine";
     private ActivityMainBinding binding;
-    nofificationsChecker checker;
+    nofificationsManager checker;
     //Context context = getActivityResultRegistry();
 
 
