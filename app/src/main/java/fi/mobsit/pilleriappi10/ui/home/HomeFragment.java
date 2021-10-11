@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,16 +52,16 @@ public class HomeFragment extends Fragment {
         TextView textview = view.findViewById(R.id.text_home);
         json = jsonData;
         textview.setText("Lääkkeesi");
-        initlist();
-        ListView listmed = view.findViewById(R.id.listmed);
-        SimpleAdapter simpleAdapter = new SimpleAdapter(getActivity(), lista,
-                android.R.layout.simple_list_item_1, new String[] {"nimet"}, new int[] {android.R.id.text1});
-        listmed.setAdapter(simpleAdapter);
+        if (json != null && json.length() > 0) {
+            initlist();
+            ListView listmed = view.findViewById(R.id.listmed);
+            SimpleAdapter simpleAdapter = new SimpleAdapter(getActivity(), lista, android.R.layout.simple_list_item_1, new String[] {"nimet"}, new int[] {android.R.id.text1});
+            listmed.setAdapter(simpleAdapter);
             }
 
+        }
         List<Map<String, String>> lista = new ArrayList<Map<String, String>>();
         private void initlist() {
-
 
             try {
 
@@ -70,7 +71,7 @@ public class HomeFragment extends Fragment {
                     String name = object.getString("medicineName");
                     String time = object.getString("time");
                     String date = object.getString("date");
-                    String outPut = name+"-"+time+"-"+date;
+                    String outPut = "Lääke: "+name+"\nKello: "+time+"\nPäivämäärä: "+date;
                     lista.add(createMed("nimet", outPut));
                 }
             }
