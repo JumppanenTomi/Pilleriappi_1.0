@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.Locale;
 
+import fi.mobsit.pilleriappi10.BuildConfig;
 import fi.mobsit.pilleriappi10.CreditsInfo;
 import fi.mobsit.pilleriappi10.LocaleHelper;
 import fi.mobsit.pilleriappi10.MainActivity;
@@ -41,6 +42,7 @@ public class settingsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
 
 
         settingsViewModel =
@@ -92,9 +94,7 @@ public class settingsFragment extends Fragment {
                             checkedItem=1;
                         }
 
-                        //Oikeesti tässä pitäisi lukea mutta en saanut toimimaan:
-                        //final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
                         builder.setTitle("Select a language")
                                 .setSingleChoiceItems(language, checkedItem, new DialogInterface.OnClickListener() {
@@ -104,19 +104,18 @@ public class settingsFragment extends Fragment {
                                         language_dialog.setText(language[i]);
                                         if(language[i].equals("ENGLISH"))
                                         {
-                                            // oikeesti tässä pitäisi lukea mut en saa toimimaan:
-                                            // context = LocaleHelper.setLocale(MainActivity.this, "en");
-                                            context = LocaleHelper.setLocale(context, "en");
+
+                                            context = LocaleHelper.setLocale(getActivity(), "en");
                                             resources = context.getResources();
 
-                                            helloworldtxt.setText(resources.getString(R.string.language));
+                                         //   helloworldtxt.setText(resources.getString(R.string.language));
                                         }
                                         if(language[i].equals("SUOMI"))
                                         {
-                                            context = LocaleHelper.setLocale(context, "fi");
+                                            context = LocaleHelper.setLocale(getActivity(), "fi");
                                             resources = context.getResources();
 
-                                            helloworldtxt.setText(resources.getString(R.string.language));
+                                           // helloworldtxt.setText(resources.getString(R.string.language));
 
                                         }
 
