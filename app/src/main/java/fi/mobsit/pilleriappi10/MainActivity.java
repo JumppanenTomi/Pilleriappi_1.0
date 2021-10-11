@@ -11,6 +11,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import fi.mobsit.pilleriappi10.databinding.ActivityMainBinding;
 
+/**
+ * @author Tomi Jumppanen
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;

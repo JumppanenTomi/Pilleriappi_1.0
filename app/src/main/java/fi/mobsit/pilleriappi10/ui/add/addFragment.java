@@ -16,24 +16,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-import fi.mobsit.pilleriappi10.MainActivity;
 import fi.mobsit.pilleriappi10.R;
 import fi.mobsit.pilleriappi10.databinding.FragmentAddBinding;
 
-/** @author Tomi Jumppanen */
+/**
+ * @author Tomi Jumppanen
+ */
 
 public class addFragment extends Fragment {
+    public static final String SHARED_PREFS = "pendingMedicineData";//setting variable's value to value that is our preference file name
+    public static final String MEDICINE_ARRAY = "medicineArray";//setting variable's value to value that is our preference tag's correct value
     private FragmentAddBinding binding;
     private String oldDataJson;//initializing variable to store data from last fragment session
-
-    public static final  String SHARED_PREFS = "pendingMedicineData";//setting variable's value to value that is our preference file name
-    public static final String MEDICINE_ARRAY = "medicineArray";//setting variable's value to value that is our preference tag's correct value
-
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentAddBinding.inflate(inflater, container, false);
@@ -64,11 +62,11 @@ public class addFragment extends Fragment {
             Gson gson = new Gson();//creating new object called gson
             String newJson = gson.toJson(medicines);
             String json;
-            if (oldDataJson != null && oldDataJson.length() > 0){
+            if (oldDataJson != null && oldDataJson.length() > 0) {
                 oldDataJson = oldDataJson.substring(0, oldDataJson.length() - 1);
                 newJson = newJson.substring(1);
                 json = oldDataJson + "," + newJson;
-            }else{
+            } else {
                 json = newJson;
             }
             //initializing old data to json variable
@@ -76,7 +74,7 @@ public class addFragment extends Fragment {
             editor.putString(MEDICINE_ARRAY, json);//adding value of variable "json" to sharedPreferences editor queue
             editor.apply();//applying changes to sharedPreferences from last editor line
 
-            Toast.makeText(getActivity(),R.string.add_medicine_addded, Toast.LENGTH_SHORT).show();//creating nice popup for user to tell that data was sent
+            Toast.makeText(getActivity(), R.string.add_medicine_addded, Toast.LENGTH_SHORT).show();//creating nice popup for user to tell that data was sent
         });
     }
 

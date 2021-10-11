@@ -1,8 +1,12 @@
 package fi.mobsit.pilleriappi10;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+/**
+ * @author Andreas Lang
+ */
 
 public class CreditsInfo extends AppCompatActivity {
 

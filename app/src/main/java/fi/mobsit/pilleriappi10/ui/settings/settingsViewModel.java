@@ -4,10 +4,14 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * @author Andreas Lang
+ */
+
 public class settingsViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
-    private MutableLiveData<String> mText2;
+    private final MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText2;
 
     public settingsViewModel() {
         mText = new MutableLiveData<>();
@@ -15,8 +19,6 @@ public class settingsViewModel extends ViewModel {
         mText.setValue("KREDIITIT");
         mText2.setValue("KIELI/LANGUAGE");
     }
-
-
 
 
     public LiveData<String> getText() {
