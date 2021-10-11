@@ -3,9 +3,12 @@ package fi.mobsit.pilleriappi10;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 
 import androidx.activity.result.ActivityResultRegistry;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +19,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import java.util.Locale;
 
 import fi.mobsit.pilleriappi10.databinding.ActivityMainBinding;
 import fi.mobsit.pilleriappi10.notifications.nofificationsManager;
@@ -33,9 +38,12 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);//force app use dark mode
         getSupportActionBar().hide();//hide ugly top action bar
         super.onCreate(savedInstanceState);
+
+
+
         createNotificationChannel();
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+       binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Passing each menu ID as a set of Ids because each
@@ -75,4 +83,7 @@ public class MainActivity extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+
+
 }

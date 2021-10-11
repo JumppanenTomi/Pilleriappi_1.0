@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="352dp"
-        android:text="@string/change_language"
+        android:text="@string/empty_case"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -22,44 +22,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <RelativeLayout
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:background="@color/cardview_dark_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLanguage">
-
-        <TextView
-            android:id="@+id/dialog_language"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="@color/material_on_surface_stroke"
-            android:textColor="@color/white"
-            android:text="ENGLISH"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/drop"
-            android:layout_marginRight="10dp"/>
-
-
-
-    </RelativeLayout>
-
-    <Switch
-        android:id="@+id/ilmoituksetSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:text="@string/notification_channel_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonCredits"
@@ -71,18 +33,6 @@
         app:layout_constraintBottom_toTopOf="@+id/textLanguage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonChangeLanguage"
-        android:layout_width="257dp"
-        android:layout_height="56dp"
-        android:text="@string/change_language"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

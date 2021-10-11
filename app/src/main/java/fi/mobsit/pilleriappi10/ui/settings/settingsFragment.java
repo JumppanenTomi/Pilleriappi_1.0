@@ -32,10 +32,7 @@ import fi.mobsit.pilleriappi10.notifications.nofificationsManager;
 
 public class settingsFragment extends Fragment {
 
-    TextView language_dialog,helloworldtxt;
-    boolean lang_selected = true;
-    Context context;
-    Resources resources;
+
 
     private settingsViewModel settingsViewModel;
     private FragmentSettingsBinding binding;
@@ -66,72 +63,8 @@ public class settingsFragment extends Fragment {
             }
         });
 
-        final TextView textView2 = binding.textLanguage;
-        settingsViewModel.getText2().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView2.setText(s);
-            }
-        });
 
-        final TextView language_dialog = binding.dialogLanguage;
-        settingsViewModel.getText2().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                language_dialog.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        final String[] language = {"ENGLISH", "SUOMI"};
 
-                        int checkedItem;
-
-                        if(lang_selected)
-                        {
-                            checkedItem = 0;
-                        }
-                        else
-                        {
-                            checkedItem=1;
-                        }
-
-                        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
-                        builder.setTitle("Select a language")
-                                .setSingleChoiceItems(language, checkedItem, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                                        language_dialog.setText(language[i]);
-                                        if(language[i].equals("ENGLISH"))
-                                        {
-
-                                            context = LocaleHelper.setLocale(getActivity(), "en");
-                                            resources = context.getResources();
-
-                                         //   helloworldtxt.setText(resources.getString(R.string.language));
-                                        }
-                                        if(language[i].equals("SUOMI"))
-                                        {
-                                            context = LocaleHelper.setLocale(getActivity(), "fi");
-                                            resources = context.getResources();
-
-                                           // helloworldtxt.setText(resources.getString(R.string.language));
-
-                                        }
-
-                                    }
-                                })
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.dismiss();
-                                    }
-                                });
-                        builder.create().show();
-                    }
-                });
-            }
-        });
         return root;
     }
 
