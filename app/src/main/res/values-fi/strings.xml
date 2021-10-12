@@ -29,4 +29,9 @@
     <string name="tomi_jumppanen">Tomi Jumppanen</string>
     <string name="valtteri_rautauoma">Valtteri Rautauoma</string>
     <string name="andy_vaan">Andreas Lang</string>
+    <string name="your_medicines">Lääkkeesi</string>
+    <string name="list_medicine_empty">Listataksesi lääkkeet sinun tulee ensin luoda niitä.</string>
+    <string name="medicine">Lääke</string>
+    <string name="time">Aika</string>
+    <string name="date">Päivämäärä</string>
 </resources>
