@@ -3,6 +3,7 @@ package fi.mobsit.pilleriappi10.ui.home;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         TextView homeTextBox = view.findViewById(R.id.text_home);//initializing variable to get data from Textbox
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);//initializing sharedpreferences to correct xml-file and setting it to private so other instances cant access it
-        String jsonData = sharedPreferences.getString(MEDICINE_ARRAY, getResources().getString(R.string.add_medicine_name));//getting old data from shared preferences file so it wont be wiped after creating new arraylist
+        String jsonData = sharedPreferences.getString(MEDICINE_ARRAY, "");//getting old data from shared preferences file so it wont be wiped after creating new arraylist
 
         SharedPreferences settings = getActivity().getSharedPreferences(SHARED_PREFS_SETTING, Context.MODE_PRIVATE);//initializing sharedpreferences to correct xml-file and setting it to private so other instances cant access it
         String username = settings.getString(MEDICINE_ARRAY_USERNAME, "");//getting old data from shared preferences file so it wont be wiped after creating new arraylist
@@ -64,11 +65,14 @@ public class HomeFragment extends Fragment {
         String welcomeMessage = getString(R.string.secondary_title_home);
         username =  welcomeMessage + username;
         welcomeText.setText(username);
-        if (json != null && json.length() > 0) {
+        if (jsonData != null && jsonData.length() > 0) {
+            Log.v("MSG", "suoritettu");
             initlist();
             ListView listmed = view.findViewById(R.id.listmed);
             SimpleAdapter simpleAdapter = new SimpleAdapter(getActivity(), lista, android.R.layout.simple_list_item_1, new String[]{"nimet"}, new int[]{android.R.id.text1});
             listmed.setAdapter(simpleAdapter);
+        }else{
+
         }
 
     }

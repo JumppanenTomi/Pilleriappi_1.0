@@ -111,7 +111,7 @@
                 android:calendarTextColor="@color/white"
                 android:datePickerMode="calendar"
                 android:ems="10"
-                android:headerBackground="@drawable/nav_background_curved"
+                android:headerBackground="@drawable/globa_purple_background"
                 android:importantForAutofill="no"
                 android:inputType="date"
                 android:minHeight="48dp"
